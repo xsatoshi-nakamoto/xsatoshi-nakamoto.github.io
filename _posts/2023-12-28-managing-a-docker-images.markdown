@@ -9,7 +9,8 @@ We have already learned how to create Docker images. In this lesson, however, we
 on a machine. We will demonstrate a few commands that are useful for downloading, inspecting, and removing images from the
 system.
 ## Relevant Documentation
-https://docs.docker.com/engine/reference/commandline/image/
+[Docker Image Managing](https://docs.docker.com/engine/reference/commandline/image/)
+
 ## Lesson Reference
 #### Download an image:
 
@@ -28,8 +29,8 @@ docker image ls -a
 
 ```
 docker image inspect nginx:1.14.0
-docker image inspect nginx:1.14.0 --format `"{{.Architecture}}"`
-docker image inspect nginx:1.14.0 --format `"{{.Architecture}} {{.Os}}"`
+docker image inspect nginx:1.14.0 --format `"{ {.Architecture} }"`
+docker image inspect nginx:1.14.0 --format `"{ .Architecture} } { {.Os} }"`
 ```
 
 ####  Delete an image:
